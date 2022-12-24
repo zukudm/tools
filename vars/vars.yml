@@ -1,0 +1,4 @@
+---
+host: localhost
+docker_group: docker
+

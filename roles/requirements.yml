@@ -1,0 +1,7 @@
+---
+roles:
+  - geerlingguy.docker
+  - geerlingguy.pip
+  
+  
+  
