@@ -3,6 +3,9 @@
   vars_files: 
     - vars/vars.yml
 
+  roles:
+    - role: cadvisor
+
   tasks: 
     # - name: Create cAdvisor container
     #   docker_container:
@@ -20,8 +23,7 @@
     #       - /var/lib/docker/:/var/lib/docker:ro
     #       - /dev/disk/:/dev/disk:ro
 
-    roles:
-    - role: cadvisor
+    
 
 
 
