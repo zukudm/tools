@@ -6,7 +6,7 @@
   tasks: 
     - name: Create cAdvisor container
       docker_container:
-        name: portainer
+        name: Monitoring
         image: gcr.io/cadvisor/cadvisor:latest
         state: started
         recreate: yes
