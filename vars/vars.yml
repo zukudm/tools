@@ -2,3 +2,18 @@
 host: localhost
 docker_group: docker
 
+cadvisor_image: gcr.io/google-containers/cadvisor:latest
+cadvisor_hostname: cadvisor
+cadvisor_description: docker monitoring for server # default: "cAdvisor {{ inventory_hostname_short }}"
+cadvisor_nginx_data_dir: /usr/share/nginx/proxies # default: "{{ nginx_data_dir }}/proxies"
+# cadvisor_requires_package: python2-passlib # default: python3-passlib
+cadvisor_proxy_basic_auth_username: admin # default: cadvisor
+cadvisor_proxy_basic_auth_password: password
+
+nginx_proxies:
+  - src_hostname: server
+    ssl: true
+    options: |
+      include /etc/nginx/conf.d/proxies/cadvisor.nginx;
+
+
