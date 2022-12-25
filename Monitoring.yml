@@ -3,25 +3,23 @@
   vars_files: 
     - vars/vars.yml
 
-  roles:
-    - role: cadvisor
-
+  
   tasks: 
-    # - name: Create cAdvisor container
-    #   docker_container:
-    #     name: Monitoring
-    #     image: gcr.io/cadvisor/cadvisor:latest
-    #     state: started
-    #     recreate: yes
-    #     restart_policy: always
-    #     published_ports:
-    #       - "8080:8080"
-    #     volumes:
-    #       - /:/rootfs:ro
-    #       - /var/run:/var/run:ro
-    #       - /sys:/sys:ro
-    #       - /var/lib/docker/:/var/lib/docker:ro
-    #       - /dev/disk/:/dev/disk:ro
+    - name: Create cAdvisor container
+      docker_container:
+        name: Monitoring
+        image: gcr.io/cadvisor/cadvisor:latest
+        state: started
+        recreate: yes
+        restart_policy: always
+        published_ports:
+          - "8080:8080"
+        volumes:
+          - /:/rootfs:ro
+          - /var/run:/var/run:ro
+          - /sys:/sys:ro
+          - /var/lib/docker/:/var/lib/docker:ro
+          - /dev/disk/:/dev/disk:ro
 
     
 
