@@ -12,7 +12,7 @@ Log in inside the Linux box and run
  ansible-galaxy install -r collections/requirements.yml
  ansible-playbook install_docker.yml
 ```
-In case of a problem run install_docker2.yml (onstead of install_docker.yml)
+In case of a problem run install_docker2.yml (instead of install_docker.yml)
 
 ## Install a Managing and Real-time monitoring tool
 
